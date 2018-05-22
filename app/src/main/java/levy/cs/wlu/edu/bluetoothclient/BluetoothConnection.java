@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.UUID;
 
 public class BluetoothConnection extends AsyncTask<Void, Void, Void> {
@@ -65,13 +66,39 @@ public class BluetoothConnection extends AsyncTask<Void, Void, Void> {
         mProgressDialog.dismiss();
     }
 
-    public void send(byte [] bytes) {
+    public void write(byte b) {
 
         try {
-            mBluetoothSocket.getOutputStream().write(bytes);
+            mBluetoothSocket.getOutputStream().write((int)b);
         }
         catch (IOException e) {
         }
+    }
+
+    public int read() {
+
+        int i = -1;
+
+        try {
+            i = mBluetoothSocket.getInputStream().read();
+        }
+        catch (IOException e) {
+        }
+
+        return i;
+    }
+
+    public int available() {
+
+        int n = 0;
+
+        try {
+            n = mBluetoothSocket.getInputStream().available();
+        }
+        catch (IOException e) {
+        }
+
+        return n;
     }
 
     public void disconnect() {

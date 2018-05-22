@@ -5,14 +5,17 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 public class CommunicationsActivity extends AppCompatActivity {
 
-    SeekBar mSpeedSeekBar;
+
     String mDeviceAddress;
     BluetoothConnection mBluetoothConnection;
-    byte [] mBytesFromServer = new byte[100];
-    int mByteIndex = 0;
+    String mMessageFromServer = "";
+
+    TextView mMessageTextView;
+    SeekBar mSpeedSeekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,32 +33,35 @@ public class CommunicationsActivity extends AppCompatActivity {
         mBluetoothConnection = new BluetoothConnection(this, mDeviceAddress);
         mBluetoothConnection.execute();
 
+        mMessageTextView = (TextView)findViewById(R.id.serverReplyText);
 
         mSpeedSeekBar = (SeekBar)findViewById(R.id.seekBar);
 
         mSpeedSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
                 if (fromUser==true) {
                     for (byte b : String.valueOf(progress).getBytes()) {
                         mBluetoothConnection.write(b);
                     }
                     mBluetoothConnection.write((byte)'.');
-                    /*
+
                     while (mBluetoothConnection.available() > 0) {
-                        int c = mBluetoothConnection.read();
+
+                        char c = (char)mBluetoothConnection.read();
+
                         if (c == '.') {
-                            if (mByteIndex > 0) {
-                                mBytesFromServer[mByteIndex+1] = 0;
-                                Log.d("TAG", new String(mBytesFromServer));
+
+                            if (mMessageFromServer.length() > 0) {
+                                mMessageTextView.setText(mMessageFromServer);
+                                mMessageFromServer = "";
                             }
-                            mByteIndex = 0;
                         }
                         else {
-                            mBytesFromServer[mByteIndex] = (byte)c;
-                            mByteIndex++;
+                            mMessageFromServer += c;
                         }
-                    }*/
+                    }
                 }
             }
 

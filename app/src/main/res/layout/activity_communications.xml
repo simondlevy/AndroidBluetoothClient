@@ -33,13 +33,22 @@
         app:layout_constraintTop_toTopOf="@+id/label" />
 
     <TextView
+        android:id="@+id/serverReplyLabel"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginTop="12dp"
+        android:text="Received from Server: "
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        tools:layout_editor_absoluteX="36dp" />
+
+    <TextView
         android:id="@+id/serverReplyText"
         style="?android:listSeparatorTextViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="28dp"
         android:layout_marginTop="12dp"
-        android:text="Received from Server"
         app:layout_constraintTop_toBottomOf="@id/seekBar"
-        tools:layout_editor_absoluteX="36dp" />
+        app:layout_constraintLeft_toRightOf="@id/serverReplyLabel"/>
 
 </android.support.constraint.ConstraintLayout>
