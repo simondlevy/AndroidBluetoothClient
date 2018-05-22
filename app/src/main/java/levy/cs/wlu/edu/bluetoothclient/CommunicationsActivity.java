@@ -11,6 +11,8 @@ public class CommunicationsActivity extends AppCompatActivity {
     SeekBar mSpeedSeekBar;
     String mDeviceAddress;
     BluetoothConnection mBluetoothConnection;
+    byte [] mBytesFromServer = new byte[100];
+    int mByteIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,25 @@ public class CommunicationsActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 if (fromUser==true) {
-                    mBluetoothConnection.send(String.valueOf(progress).getBytes());
+                    for (byte b : String.valueOf(progress).getBytes()) {
+                        mBluetoothConnection.write(b);
+                    }
+                    mBluetoothConnection.write((byte)'.');
+                    /*
+                    while (mBluetoothConnection.available() > 0) {
+                        int c = mBluetoothConnection.read();
+                        if (c == '.') {
+                            if (mByteIndex > 0) {
+                                mBytesFromServer[mByteIndex+1] = 0;
+                                Log.d("TAG", new String(mBytesFromServer));
+                            }
+                            mByteIndex = 0;
+                        }
+                        else {
+                            mBytesFromServer[mByteIndex] = (byte)c;
+                            mByteIndex++;
+                        }
+                    }*/
                 }
             }
 
