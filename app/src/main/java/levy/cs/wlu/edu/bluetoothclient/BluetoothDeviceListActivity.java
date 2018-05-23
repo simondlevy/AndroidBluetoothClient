@@ -1,3 +1,13 @@
+/*
+Bluetooth device list activity
+
+Lists Bluetooth devices paired with your device, and attempts to connect to the device you select.
+
+Copyright 2018  Emily Boyes, Gunnar Bowman, Trip Calihan, Simon D. Levy, Sheperd Sims
+
+MIT License
+ */
+
 package levy.cs.wlu.edu.bluetoothclient;
 
 import android.bluetooth.BluetoothAdapter;
@@ -5,7 +15,6 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,7 +25,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class DeviceListActivity extends AppCompatActivity {
+public class BluetoothDeviceListActivity extends AppCompatActivity {
 
     ListView mDeviceList;
     private BluetoothAdapter mBluetoothAdapter = null;
@@ -78,7 +87,7 @@ public class DeviceListActivity extends AppCompatActivity {
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
             // Make an intent to start next activity.
-            Intent i = new Intent(DeviceListActivity.this, CommunicationsActivity.class);
+            Intent i = new Intent(BluetoothDeviceListActivity.this, CommunicationsActivity.class);
             //Change the activity.
             i.putExtra(EXTRA_ADDRESS, address); //this will be received at CommunicationsActivity
             startActivity(i);

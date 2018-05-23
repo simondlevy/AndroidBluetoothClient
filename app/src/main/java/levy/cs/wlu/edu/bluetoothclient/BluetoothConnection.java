@@ -1,3 +1,13 @@
+/*
+Bluetooth connection task
+
+Extends AsyncTask to support threaded interaction with a sever over a Bluetooth socket.
+
+Copyright 2018  Emily Boyes, Gunnar Bowman, Trip Calihan, Simon D. Levy, Sheperd Sims
+
+MIT License
+ */
+
 package levy.cs.wlu.edu.bluetoothclient;
 
 import android.app.ProgressDialog;
