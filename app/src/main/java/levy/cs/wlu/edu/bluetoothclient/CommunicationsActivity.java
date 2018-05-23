@@ -5,7 +5,7 @@ Works with BluetoothConnection to provide simple interaction with a sever over a
 seek bar (slider) sends serialized values to server; activity checks for available responses from
 server.
 
-Copyright 2018  Emily Boyes, Gunnar Bowman, Trip Calihan, Simon D. Levy, Sheperd Sims
+Copyright 2018  Emily Boyes, Gunnar Bowman, Trip Calihan, Simon D. Levy, Shepherd Sims
 
 MIT License
  */
@@ -22,7 +22,7 @@ public class CommunicationsActivity extends AppCompatActivity {
 
 
     String mDeviceAddress;
-    BluetoothConnection mBluetoothConnection;
+    BluetoothCommunicationsTask mBluetoothConnection;
     String mMessageFromServer = "";
 
     TextView mMessageTextView;
@@ -41,7 +41,7 @@ public class CommunicationsActivity extends AppCompatActivity {
         mDeviceAddress = newint.getStringExtra(BluetoothDeviceListActivity.EXTRA_ADDRESS);
 
         // Create a connection to this device
-        mBluetoothConnection = new BluetoothConnection(this, mDeviceAddress);
+        mBluetoothConnection = new BluetoothCommunicationsTask(this, mDeviceAddress);
         mBluetoothConnection.execute();
 
         mMessageTextView = (TextView)findViewById(R.id.serverReplyText);

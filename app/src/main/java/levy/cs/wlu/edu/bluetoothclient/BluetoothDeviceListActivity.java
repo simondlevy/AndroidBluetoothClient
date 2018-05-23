@@ -3,7 +3,7 @@ Bluetooth device list activity
 
 Lists Bluetooth devices paired with your device, and attempts to connect to the device you select.
 
-Copyright 2018  Emily Boyes, Gunnar Bowman, Trip Calihan, Simon D. Levy, Sheperd Sims
+Copyright 2018  Emily Boyes, Gunnar Bowman, Trip Calihan, Simon D. Levy, Shepherd Sims
 
 MIT License
  */
