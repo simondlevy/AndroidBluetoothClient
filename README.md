@@ -9,7 +9,7 @@ the main (first) activity of your app. It lists the Bluetooth devices with which
 * [CommunicationsTask](https://github.com/simondlevy/BluetoothClient/blob/master/app/src/main/java/levy/cs/wlu/edu/bluetoothclient/CommunicationsTask.java):
 an asynchronous task (i.e., thread) for managing communications with the device to which you've connected. 
 * [CommunicationsActivity](https://github.com/simondlevy/BluetoothClient/blob/master/app/src/main/java/levy/cs/wlu/edu/bluetoothclient/CommunicationsActivity.java):
-an abstract class that supports reading from and writing to the server via its <tt>mBluetoothConnection</b> object.  An example subclass,
+an abstract class that supports reading from and writing to the server via its <tt>mBluetoothConnection</tt> object.  An example subclass,
 [MyCommunicationsActivity](https://github.com/simondlevy/BluetoothClient/blob/master/app/src/main/java/levy/cs/wlu/edu/bluetoothclient/MyCommunicationsActivity.java),
 provides a seek-bar (slider) and text widget to send and receive values from your server.
 
