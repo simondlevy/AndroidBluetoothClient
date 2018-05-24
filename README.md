@@ -7,8 +7,7 @@ students in Washington and Lee's Spring 2018 course
 The students originally wrote code to control a servo connected to a RaspberryPi 3, which acted as the server.
 Eventually I was able to factor this code into three reusable classes 
 
-* [DeviceListActivity]
-(https://github.com/simondlevy/AndroidBluetoothClient/blob/master/BluetoothClient/app/src/main/java/levy/cs/wlu/edu/bluetoothclient/DeviceListActivity.java):
+* [DeviceListActivity](https://github.com/simondlevy/AndroidBluetoothClient/blob/master/BluetoothClient/app/src/main/java/levy/cs/wlu/edu/bluetoothclient/DeviceListActivity.java):
 the main (first) activity of your app. It lists the Bluetooth devices with which your Android device is paired and connects to the device you select.
 
 * [CommunicationsTask](https://github.com/simondlevy/BluetoothClient/blob/master/app/src/main/java/levy/cs/wlu/edu/bluetoothclient/CommunicationsTask.java):
