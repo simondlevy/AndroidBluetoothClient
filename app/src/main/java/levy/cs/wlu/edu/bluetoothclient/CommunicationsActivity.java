@@ -5,10 +5,10 @@ Works with BluetoothConnection to provide simple interaction with a sever over a
 seek bar (slider) sends serialized values to server; activity checks for available responses from
 server.
 
-Copyright 2018  Emily Boyes, Gunnar Bowman, Trip Calihan, Simon D. Levy, Shepherd Sims
+Copyright 2018  Gunnar Bowman, Emily Boyes, Trip Calihan, Simon D. Levy, Shepherd Sims
 
 MIT License
- */
+*/
 
 package levy.cs.wlu.edu.bluetoothclient;
 

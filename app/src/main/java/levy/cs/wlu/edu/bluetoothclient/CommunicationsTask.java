@@ -3,7 +3,7 @@ Bluetooth communications task
 
 Extends AsyncTask to support threaded interaction with a sever over a Bluetooth socket.
 
-Copyright 2018  Emily Boyes, Gunnar Bowman, Trip Calihan, Simon D. Levy, Shepherd Sims
+Copyright 2018  Gunnar Bowman, Emily Boyes, Trip Calihan, Simon D. Levy, Shepherd Sims
 
 MIT License
  */
