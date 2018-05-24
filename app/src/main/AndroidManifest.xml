@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".BluetoothDeviceListActivity">
+        <activity android:name=".DeviceListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -25,7 +25,7 @@
         </activity>
 
         <activity
-            android:name=".CommunicationsActivity"
+            android:name=".MyCommunicationsActivity"
             android:label="@string/title_activity_comms"
             android:theme="@style/AppTheme.NoActionBar">
 

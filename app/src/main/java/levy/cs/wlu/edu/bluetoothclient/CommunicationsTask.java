@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
-public class BluetoothCommunicationsTask extends AsyncTask<Void, Void, Void> {
+public class CommunicationsTask extends AsyncTask<Void, Void, Void> {
 
     private boolean mConnected = true;
     private ProgressDialog mProgressDialog;
@@ -33,7 +33,7 @@ public class BluetoothCommunicationsTask extends AsyncTask<Void, Void, Void> {
 
     private static final UUID myUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-    BluetoothCommunicationsTask(AppCompatActivity activity, String address) {
+    CommunicationsTask(AppCompatActivity activity, String address) {
         mCurrentActivity = activity;
         mAddress =  address;
     }

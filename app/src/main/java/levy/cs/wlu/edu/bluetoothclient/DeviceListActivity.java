@@ -25,7 +25,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class BluetoothDeviceListActivity extends AppCompatActivity {
+public class DeviceListActivity extends AppCompatActivity {
 
     ListView mDeviceList;
     private BluetoothAdapter mBluetoothAdapter = null;
@@ -87,7 +87,7 @@ public class BluetoothDeviceListActivity extends AppCompatActivity {
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
             // Make an intent to start next activity.
-            Intent i = new Intent(BluetoothDeviceListActivity.this, CommunicationsActivity.class);
+            Intent i = new Intent(DeviceListActivity.this, MyCommunicationsActivity.class);
             //Change the activity.
             i.putExtra(EXTRA_ADDRESS, address); //this will be received at CommunicationsActivity
             startActivity(i);
