@@ -1,3 +1,4 @@
+# Android Bluetooth Client
 <img src="logo.png" width=500>
 This repository provides an Android app with reusable code for running a socket
 client over Bluetooth.  The code derives from the term projects of four
