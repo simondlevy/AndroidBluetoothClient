@@ -23,5 +23,5 @@ provides a seek-bar (slider) and text widget to send and receive values from you
 ## Python server
 
 The easiest way to try out this app is with the [Python Bluetooth server](https://github.com/simondlevy/PythonBluetoothServer)
-that we developed to work with it.  This server uses the same simple protocol (period-deliminted messages) as the code in the
+that we developed to work with it.  This server uses the same simple protocol (period-delimited messages) as the code in the
 <b>MyCommunicationsActivity</b> class.
